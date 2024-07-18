@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  {% block title %}
+    Statuses
+  {% endblock %}
+{% endblock %}
+
+{% block content %}
+    <div class="statuses_container">
+        {% include 'main/components/card.html' %}
+    </div>
+{% endblock %}

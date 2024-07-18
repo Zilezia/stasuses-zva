@@ -1,0 +1,29 @@
+{% for item in values %}
+    <a href="{{ item.url }}" class="status_card" id="{{ item.name }}">
+      <div class="top_half">
+        <p class="item_name">{{ item.name }}</p>
+      </div>
+      <div class="bottom_half">
+        {% set status_color = '#b3b3b3' %} <!-- siwy -->
+        
+      {% if item.status == 'Working' %}
+        {% set status_color = '#ffcf00' %} <!-- pomarańczowo-żołty -->
+
+      {% elif item.status == 'Finished' %}
+        {% set status_color = '#1dc200' %} <!-- zielony -->
+
+      {% elif item.status == 'Updating' or item.status == 'Fixing' %}
+        {% set status_color = '#1b43e8' %} <!-- niebieski -->
+
+      {% elif item.status == 'Not begun' or item.status == 'Nothing' %}
+        {% set status_color = '#260024' %} <!-- czarno-purpurowy -->
+
+      {% endif %}
+    
+        <p class="item_status" style="color: {{ status_color }}">
+            {{ item.status }}
+        </p>
+
+      </div>
+    </a>
+{% endfor %}

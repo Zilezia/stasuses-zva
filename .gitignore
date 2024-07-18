@@ -1,0 +1,12 @@
+__pycache__
+.venv
+.vercel
+.vscode
+
+# .gitignore
+# .env
+mysql_dump.py
+dump.csv
+sql
+
+requirements.txt
