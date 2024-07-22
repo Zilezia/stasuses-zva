@@ -1,0 +1,34 @@
+{
+    "projects": [
+      {
+          "name": "ZJountries-api",
+          "status": "Paused",
+          "url": "https://github.com/Zilezia/ZJountries-api"
+      },
+      {
+          "name": "ZJountries",
+          "status": "",
+          "url": "https://github.com/Zilezia/ZJountries"
+      },
+      {
+          "name": "playful_pandas",
+          "status": "Not begun",
+          "url": "https://github.com/Zilezia/playful_pandas"
+      },
+      {
+          "name": "kot_ml",
+          "status": "Paused",
+          "url": "https://github.com/Zilezia/kot_ml"
+      },
+      {
+          "name": "statuses-zva",
+          "status": "Working",
+          "url": "https://github.com/Zilezia/statuses-zva"
+      },
+      {
+          "name": "other",
+          "status": "Nothing",
+          "url": "https://indeed.com/"
+      }
+    ]
+  }

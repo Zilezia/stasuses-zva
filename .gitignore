@@ -4,9 +4,4 @@ __pycache__
 .vscode
 
 # .gitignore
-# .env
-mysql_dump.py
-dump.csv
-sql
-
-requirements.txt
+.env

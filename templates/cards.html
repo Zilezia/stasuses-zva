@@ -1,0 +1,31 @@
+{% for item in data[table] %}
+    {% if item.name and item.status %}
+        <a href="{{ item.url }}" class="status_card" id="{{ item.name }}">
+            <div class="top_half">
+                <p class="item_name">{{ item.name }}</p>
+            </div>
+            <div class="bottom_half">
+                {% set status_color = '#b3b3b3' %} <!-- grey -->
+                
+                {% if item.status == 'Working' %}
+                    {% set status_color = '#ffcf00' %} <!-- yellow -->
+                    
+                    {% elif item.status == 'Finished' %}
+                    {% set status_color = '#1dc200' %} <!-- green -->
+                    
+                    {% elif item.status == 'Updating' or item.status == 'Fixing' %}
+                    {% set status_color = '#1b43e8' %} <!-- blue -->
+
+                    {% elif item.status == 'Not begun' or item.status == 'Nothing' %}
+                    {% set status_color = '#260024' %} <!-- dark purple -->
+                {% endif %}
+            
+                <p class="item_status" style="color: {{ status_color }}">
+                    {{ item.status }}
+                </p>
+            </div>
+        </a>
+    {% else %}
+    <!-- Empty -->
+    {% endif %}
+{% endfor %}
