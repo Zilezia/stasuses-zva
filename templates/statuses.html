@@ -10,6 +10,8 @@
   <div class="statuses_container">
     {% if data %}
       {% include 'cards.html' %}
+    {% else %}
+      <p>Bot is broken, please wait.</p>
     {% endif %}
   </div>
 {% endblock %}

@@ -1,12 +1,14 @@
 from flask import Flask, render_template, request, abort
 from flask_restful import Api, Resource
-import subprocess
-import threading
-import sys
 import os
+from dotenv import load_dotenv
 from functools import wraps
 
-from reador.config import *
+load_dotenv()
+
+AUTH = os.getenv('AUTH')
+AUTH_KEY = os.getenv('AUTH_KEY')
+TABLE = os.getenv('TABLE')
 
 app = Flask(__name__)
 api = Api(app)
@@ -36,15 +38,6 @@ def index():
 
 api.add_resource(DataReceiver, '/'+AUTH)
 
-def run_discord_bot():
-    script_path = os.path.join(os.path.dirname(__file__), 'reador', 'bot.py')
-    subprocess.run([sys.executable, script_path], capture_output=True, text=True, check=True)
-
-def start_discord_bot_thread():
-    thread = threading.Thread(target=run_discord_bot)
-    thread.start()
-
 if __name__ == "__main__":
-    start_discord_bot_thread()
-    app.run(debug=False)
+    app.run(debug=True)
     # app.run(debug=True)
